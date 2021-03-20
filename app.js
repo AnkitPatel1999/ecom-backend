@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const express = require('express')
 const app = express();
 
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+
 const auth = require('./routes/auth')
 
 //DB CONNECTION
@@ -13,6 +17,12 @@ mongoose.connect(process.env.DATABASE,{
 }).then(() => {
     console.log("DB Connected");
 })
+
+//Middleware
+
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors());
 
 //MY ROUTES
 app.use('/api', auth);
