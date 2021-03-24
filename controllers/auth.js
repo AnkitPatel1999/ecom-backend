@@ -2,7 +2,6 @@ const User  = require('../models/User');
 const { validationResult} = require('express-validator');
 var jwt = require('jsonwebtoken')
 var expressJwt = require('express-jwt');
-const { rawListeners } = require('npm');
 
 
 exports.signup = (req, res) => {
