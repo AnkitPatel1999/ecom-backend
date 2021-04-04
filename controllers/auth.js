@@ -63,12 +63,14 @@ exports.signin = (req,res) => {
     })
 }
 
+
+
 exports.signout = (req, res) => {
-    res.clearCookie('token');
+    res.clearCookie("token");
     res.json({
-        message: 'User Signout successfully'
-    })
-}
+      message: "User signout successfully"
+    });
+  };
 
 //potected ROUTES
 exports.isSignedIn = expressJwt({
@@ -76,16 +78,17 @@ exports.isSignedIn = expressJwt({
     userProperty:"auth"
 })
 
-//custome middleware
-exports.isAuthenticated = (req,res,next) => {
+//custom middlewares
+exports.isAuthenticated = (req, res, next) => {
     let checker = req.profile && req.auth && req.profile._id == req.auth._id;
-    if(!checker) {
-        return res.status(403).json({
-            error: "ACCESS DENIED"
-        }) 
+    console.log(checker)
+    if (!checker) {
+      return res.status(403).json({
+        error: "ACCESS DENIED"
+      });
     }
-    next(); 
-}
+    next();
+  };
 
 exports.isAdmin = (req,res,next) => {
     if(req.profile.role === 0) {

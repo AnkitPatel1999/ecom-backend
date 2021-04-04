@@ -10,13 +10,13 @@ const productSchema = mongoose.Schema({
         maxlenght: 32 
     },
     description: {
-        type: string,
+        type: String,
         trim: true,
         required: true,
         maxlenght: 32,
     },
     price:{
-        type: number,
+        type: Number,
         required: true,
         maxlength: 32,
         trim: true
@@ -27,10 +27,10 @@ const productSchema = mongoose.Schema({
         required: true
     },
     stock: {
-        type: number
+        type: Number
     },
     sold: {
-        type: number,
+        type: Number,
         default:0
     },
     photo:{
