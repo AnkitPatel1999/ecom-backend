@@ -16,13 +16,16 @@ const orderRoute = require('./routes/orderRoute');
 const paymentRoute = require('./routes/paymentRoute');
 
 //DB CONNECTION
-mongoose.connect(process.env.DATABASE,{
-     useNewUrlParser: true,
-     useUnifiedTopology: true,
-     useCreateIndex: true,
-}).then(() => {
-    console.log("DB Connected");
-})
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 
 //Middleware
 
