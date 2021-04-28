@@ -10,9 +10,7 @@ router.post('/signup',[
     check("password", "password should be at least 3 char").isLength({ min: 3})
 ], signup)
 
-router.get("/hello",(req,res)=>{
-	res.send("hello world");
-})
+
 router.post('/signin',[
     check("email", "Email should required").isEmail(),
     check("password", "password field is required").isLength({ min: 1})
