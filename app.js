@@ -8,11 +8,11 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 //My Routes
-const authRoutes = require('./routes/auth')
-const userRoute = require('./routes/user')
-const categoryRoute = require('./routes/category')
-const productRoute = require('./routes/product');
-const orderRoute = require('./routes/order');
+const authRoutes = require('./routes/authRoute')
+const userRoute = require('./routes/userRoute')
+const categoryRoute = require('./routes/categoryRoute')
+const productRoute = require('./routes/productRoute');
+const orderRoute = require('./routes/orderRoute');
 const paymentRoute = require('./routes/paymentRoute');
 
 //DB CONNECTION

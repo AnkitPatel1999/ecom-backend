@@ -1,9 +1,9 @@
 var express = require('express');
 var router  = express.Router();
-const { isSignedIn, isAuthenticated } = require('../controllers/auth');
-const { getUserById } = require('../controllers/user')
+const { isSignedIn, isAuthenticated } = require('../controllers/authController');
+const { getUserById } = require('../controllers/userController')
 
-const { getToken, processPayment } = require("../controllers/payment");
+const { getToken, processPayment } = require("../controllers/paymentController");
 
 router.param("userId", getUserById)
 

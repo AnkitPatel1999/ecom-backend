@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router();
 
-const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/auth')
-const { getCategoryById, createCategory, getCategory,getAllCategory , updateCategory,removeCategory} = require('../controllers/category')
-const { getUserById } = require('../controllers/user')
+const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/authController')
+const { getCategoryById, createCategory, getCategory,getAllCategory , updateCategory,removeCategory} = require('../controllers/categoryController')
+const { getUserById } = require('../controllers/userController')
 
 //params
 router.param('userId', getUserById);

@@ -1,8 +1,8 @@
 const express  = require('express');
 const router = express.Router();
 
-const { getUser, getUserById, updateUser, getAllUsers, userPurchaseList } = require('../controllers/user')
-const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/auth')
+const { getUser, getUserById, updateUser, getAllUsers, userPurchaseList } = require('../controllers/userController')
+const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/authController')
 
 
 router.param('userId', getUserById);

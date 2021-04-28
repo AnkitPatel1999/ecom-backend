@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/auth')
-const { getUserById, pushOrderInPurchaseList} = require('../controllers/user')
-const { updateStock } = require('../controllers/product')
+const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/authController')
+const { getUserById, pushOrderInPurchaseList} = require('../controllers/userController')
+const { updateStock } = require('../controllers/productController')
 
-const { getOrderById, createOrder, getAllOrders , getOrderStatus, updateStatus} = require('../controllers/order')
+const { getOrderById, createOrder, getAllOrders , getOrderStatus, updateStatus} = require('../controllers/orderController')
 
 //params
 router.param("userId", getUserById);
