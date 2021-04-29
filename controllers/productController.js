@@ -1,4 +1,4 @@
-const Product  = require("../models/ProductModel");
+const Product  = require("../models/productModel");
 const formidable = require("formidable");
 const _ = require("lodash")
 const fs = require("fs");
