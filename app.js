@@ -15,17 +15,16 @@ const productRoute = require('./routes/productRoute');
 const orderRoute = require('./routes/orderRoute');
 const paymentRoute = require('./routes/paymentRoute');
 
+
+//mongodb+srv://ankit:<password>@cluster0.n608t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //DB CONNECTION
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
+mongoose.connect('mongodb+srv://aj:patel@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority',{
+     useNewUrlParser: true,
+     useUnifiedTopology: true,
+     useCreateIndex: true,
+}).then(() => {
+    console.log("DB Connected");
+})
 
 //Middleware
 
