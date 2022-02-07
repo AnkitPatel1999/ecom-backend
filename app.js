@@ -7,11 +7,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-//Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use(cookieParser());
-
 //My Routes
 const authRoutes = require('./routes/authRoute')
 const userRoute = require('./routes/userRoute')
@@ -19,6 +14,7 @@ const categoryRoute = require('./routes/categoryRoute')
 const productRoute = require('./routes/productRoute');
 const orderRoute = require('./routes/orderRoute');
 const paymentRoute = require('./routes/paymentRoute');
+
 
 //mongodb+srv://ankit:<password>@cluster0.n608t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //DB CONNECTION
@@ -29,6 +25,12 @@ mongoose.connect('mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?r
 }).then(() => {
     console.log("DB Connected");
 })
+
+//Middleware
+
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors());
 
 //MY ROUTES
 app.use('/api', authRoutes);
