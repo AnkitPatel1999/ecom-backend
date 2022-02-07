@@ -18,7 +18,7 @@ const paymentRoute = require('./routes/paymentRoute');
 
 //mongodb+srv://ankit:<password>@cluster0.n608t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //DB CONNECTION
-mongoose.connect('mongodb+srv://aj:patel@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority',{
      useNewUrlParser: true,
      useUnifiedTopology: true,
      useCreateIndex: true,
@@ -39,7 +39,9 @@ app.use('/api', categoryRoute);
 app.use('/api', productRoute);
 app.use('/api', orderRoute);
 app.use('/api', paymentRoute);
-
+app.use('/ok',(req, res)=>{
+    console.log(req.body?.name)
+})
 //PORT
 
 var server_port = process.env.YOUR_PORT || process.env.PORT || 8000;

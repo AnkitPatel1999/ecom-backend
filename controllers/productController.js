@@ -26,6 +26,8 @@ exports.createProduct = (req, res) => {
         }
         let product = new Product(fields);
 
+        console.log("file...",file)
+
         //handle file here
         if(file.photo) {
             if(file.photo.size > 3000000 ) {
@@ -142,6 +144,7 @@ exports.getAllProducts = (req, res) => {
     .sort([[sortBy,"asc"]])
     .limit(limit)
     .exec((err, products) => {
+        console.log("err..",err)
         if(err) {
             return res.status(400).json({
                 error: "No product found"
