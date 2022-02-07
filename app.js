@@ -6,6 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+app.use(cors());
 
 //My Routes
 const authRoutes = require('./routes/authRoute')
@@ -30,7 +31,6 @@ mongoose.connect('mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?r
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
 
 //MY ROUTES
 app.use('/api', authRoutes);
