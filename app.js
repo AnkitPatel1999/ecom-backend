@@ -40,7 +40,7 @@ app.use('/api', productRoute);
 app.use('/api', orderRoute);
 app.use('/api', paymentRoute);
 app.use('/ok',(req, res)=>{
-    console.log(req.body?.name)
+    console.log(req.body)
 })
 //PORT
 
