@@ -21,7 +21,7 @@ const paymentRoute = require('./routes/paymentRoute');
 mongoose.connect('mongodb+srv://ankit:ankit@cluster0.n608t.mongodb.net/nodeapi?retryWrites=true&w=majority',{
      useNewUrlParser: true,
      useUnifiedTopology: true,
-     useCreateIndex: true,
+     useCreateIndex: true, 
 }).then(() => {
     console.log("DB Connected");
 })
