@@ -14,6 +14,7 @@ exports.getCategoryById = (req, res, next, id) => {
 
 exports.createCategory = (req, res) => {
     const category = new Category(req.body);
+    console.log("category "+category)
     category.save((err, category) => {
         if(err) {
             return res.status(400).json({
